@@ -1,0 +1,72 @@
+.Cabecalho {
+    top: -65px;
+    left: 1150px;
+    position: relative;
+    text-align: right;
+    justify-content: right;
+    padding: 5px;
+    font-family: Anton;
+    text-decoration: none;
+    color: black;
+}
+
+.RecuperaSenha3 {
+    background-color: whitesmoke;
+    top: 20px;
+    left: 400px;  
+    position: absolute;
+    height: 300px;
+    width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0, 0, 0.3);
+}
+
+h1 {
+    margin-bottom: 32px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="senha"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+}
+
+input[type="confirmaSenha"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+}
+
+button {
+    position: absolute;
+    top: 81%;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;  
+    display: flex;
+    cursor: pointer;
+    }
+
+.Recuperar_Senha{
+    top: auto;
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+
+button:hover{
+    background-color: #174e1a;
+}

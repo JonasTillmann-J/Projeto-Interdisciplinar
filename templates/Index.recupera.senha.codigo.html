@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.recupera.senha.codigo.css') }}">
+</head>
+<body>
+
+    <h1>Callista</h1>
+
+    <div class="codigo">
+        <h2>Recuperar Senha</h2>
+        <form action="/RecuperarSenha/recupera3/RecuperaSenha3.html" method="post">
+            <label for="codigo">Codigo:</label>
+            <input type="codigo" id="email" name="codigo" required>
+            <a href="/RecuperarSenha/recupera3/RecuperaSenha3.html">
+            <button type="submit">Enviar</button>
+            </a>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.recupera.senha.codigo.js') }}"></script>
+</body>
+</html>

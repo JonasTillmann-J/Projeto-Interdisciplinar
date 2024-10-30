@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.login.css') }}">
+</head>
+<!--
+    input senha == iptSenhaLogin
+    input email == iptEmailLogin
+-->
+
+<body>
+    <section class="left-panel">
+        <div class="nav">
+            <a href="/indexes/Chat/index.Chat.html">Sobre nós</a>
+            <a href="index.html">Produtos</a>
+            <a href="/indexes/RecuperarSenha/Recupera1/Indexrecuperasenha.html">Cadastrar-se</a>
+        </div>
+        <img class="img" src="/Imgs Gerais/imgs/imagem de preenchimento.jpeg" alt="a">
+    </section>
+    <div class="right-panel">
+        <img class="logo" src="/Imgs Gerais/imgs/neguinmelancia.png" alt="Logo">
+        <section class="loginform" id="loginform">
+            <h1 class="login">Login</h1>
+            <form action="/indexes/Chat/index.Chat.html" method="POST">
+                <div class="input-group">
+                    <input autocomplete="current-password" required type="email" name="iptEmailLogin" class="input">
+                    <label class="user-label">Email</label>
+                </div>
+                <div class="input-group-senha">
+                    <button type="button" id="hidepassword" class="hidepassword">
+                        <img onclick="eyeopen()" id="olhoaberto" class="olhoaberto" src="/Imgs Gerais/imgs/visible.png"
+                            alt="olho aberto">
+                    </button>
+                    <input required type="password" name="iptSenhaLogin" autocomplete="current-password"
+                        class="input-senha" id="input-senha">
+                    <label class="user-label-senha">Senha</label>
+                </div>
+                <button type="submit" id="btnEntrarLOGIN" class="btn-submit" onclick="tclaEnter()">Entrar</button>
+            </form>
+        </section>
+        <p class="signup">Ainda não tem uma conta?
+            <a rel="noopener noreferrer" href="#" class="">Cadastre-se aqui</a>
+        </p>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.login.js') }}"></script>
+</body>
+
+</html>

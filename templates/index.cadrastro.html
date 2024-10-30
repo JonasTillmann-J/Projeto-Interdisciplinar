@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.cadastro.css') }}">
+    <!--
+    iptPnomeTcad == input primeiro nome pro cadrastro
+    iptSnomeTcad == input segundo nome pro cadrastro
+    iptEmailTcad == input email pro cadrastro
+    iptsenha1Tcad == input da primeira senha digitada pelo usuario
+    iptsenha2Tcad == input da repetição da senha informada para ferificação de igualdade
+    -->
+</head>
+<body>
+    <form class="forn" action="/indexes/cadratro/app.py" method="post">
+        
+        <div class="painelLateral">
+            <section class="form-cad">
+                <center>
+                    <h1 class="Cadastrese">Cadastre-se</h1>
+                    <p class="text">Informe os dados abaixo e tenha total acessoa a nossa IA</p>
+                </center>
+                <div class="input-group-pnome">
+                    <input autocomplete="name" required type="text" name="iptPnomeTcad" class="input-pnome">
+                    <label class="user-label-pnome">Primeiro nome</label>
+                </div>
+                <div class="input-group-snome">
+                    <input autocomplete="name" required type="text" name="iptSnomeTcad" class="input-snome">
+                    <label class="user-label-snome">Segundo nome</label>
+                </div>
+                <div class="input-group-email">
+                    <input autocomplete="current-password" required type="email" name="iptEmailTcad"
+                        class="input-email">
+                    <label class="user-label-email">Email</label>
+                </div>
+                <div class="input-group-senha1">
+                    <button onclick="eyeopen(1)" type="button" id="hidepassword1" class="hidepassword">
+                        <img id="olhoaberto1" class="olhoaberto" src="{{ url_for('static', filename='images/logo.png') }}" alt="olho aberto">
+                    </button>
+                    <input autocomplete="current-password" required type="password" id="olhoabertocad1" name="iptsenha1Tcad" class="input-senha1">
+                    <label class="user-label-senha1">Sua senha aqui</label>
+                </div>
+                
+                <div class="input-group-senha2">
+                    <button onclick="eyeopen(2)" type="button" id="hidepassword2" class="hidepassword">
+                        <img id="olhoaberto2" class="olhoaberto" src="/Imgs Gerais/imgs/visible.png" alt="olho aberto">
+                    </button>
+                    <input autocomplete="current-password" required type="password" id="olhoabertocad2" name="iptsenha2Tcad" class="input-senha2">
+                    <label class="user-label-senha2">Repita a senha</label>
+                </div>
+                <button type="submit" id="btnEntrarLOGIN" class="btn-submit" onclick="tclaEnter()">Entrar</button>
+            </section>
+        </div>
+    </form>
+    <script src="{{ url_for('static', filename='js/script.cadrastro.js') }}"></script>
+</body>
+
+</html>

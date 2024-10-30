@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image:url(/indexes/imgs/_81f62beb-08d0-4302-b909-f54f372aa505.jfif);
+    background-size: cover;
+    display: flex;
+    
+}
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 10px 20px;
+    background: transparent;
+    left: 47%;
+}
+.navbar a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+.navbar .element {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+  }
+  
+  .navbar .element::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    border: 1px solid #5918db;
+    border-radius: 5px;
+    background-color: #5918db;
+    transition: width 0.5s ease-in-out;
+  }
+  .navbar .element:hover::before {
+    width: 100%;
+  }
+.navbar a.signin {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background: white;
+}
+.navbar a.signin:hover{
+    background: rgb(0, 0, 0);
+    border: 1px solid rgb(53, 53, 53);
+    transition: all 0.5s ease-in-out;
+    color: #fff;
+}
+.navbar a.signin:not(:hover) {
+    transition: all 0.9s ease-in-out;
+    border: 1px solid black;
+    background: transparent;
+}
+.navbar a.register{
+    background:white;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.navbar a.register:hover{
+    background: rgb(0, 0, 0);
+    border: 1px solid rgb(53, 53, 53);
+    transition: all 0.5s ease-in-out;
+    color: #fff;
+}
+.navbar a.register:not(:hover){
+    transition: all 0.9s ease-in-out;
+    border: 1px solid rgb(0, 0, 0);
+    background: transparent;
+}

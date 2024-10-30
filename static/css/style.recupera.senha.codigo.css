@@ -1,0 +1,37 @@
+.codigo {
+    background-color: whitesmoke;  
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin-bottom: 32px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="codigo"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+}
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;  
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #174e1a;
+}
