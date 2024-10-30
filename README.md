@@ -31,34 +31,33 @@ Projeto interdisciplinar do curso tecnico em desenvolvimento de sistemas cedup h
 
 Para a Programação de comunicação do servidor com a aplicação html preciso que seja feita uma função "def" para cara tela onde essa função terá os codigos para a ligação envio e recebimento de dados assim com a função "Render_Template para agilizar o processo e deixar mais estavel e com intuitividade do encapsulamento de cada dela exemplo abaixo
 
-# Nosso Codigo Exemplo
+# Codigo Exemplo
+    from flask import Flask, request, render_template
+    import mysql.connector
+    from mysql.connector import Error
 
-from flask import Flask, request, render_template
-import mysql.connector
-from mysql.connector import Error
+    app = Flask(__name__)
 
-app = Flask(__name__)
+    @app.route('/', methods=['GET', 'POST'])
+        def cadastrar():
+            if request.method == 'POST':
+              # Código de conexão e inserção no banco de dados
+               pass
+         return render_template("cadastro.html")
 
-@app.route('/', methods=['GET', 'POST'])
-    def cadastrar():
-        if request.method == 'POST':
-          # Código de conexão e inserção no banco de dados
-           pass
-     return render_template("cadastro.html")
+    Rota para a página de login
+    @app.route('/login', methods=['GET', 'POST'])
+        def login():
+          if request.method == 'POST':
+                # Código de verificação de login
+                pass
+            return render_template("login.html")
 
-# Rota para a página de login
-@app.route('/login', methods=['GET', 'POST'])
-    def login():
-      if request.method == 'POST':
-            # Código de verificação de login
-            pass
-        return render_template("login.html")
+    Rota para a página de perfil
+    @app.route('/perfil')
+        def perfil():
+            # Lógica para buscar dados do usuário
+            return render_template("perfil.html")
 
-# Rota para a página de perfil
-@app.route('/perfil')
-    def perfil():
-        # Lógica para buscar dados do usuário
-        return render_template("perfil.html")
-
-if __name__ == '__main__':
-    app.run(debug=True)
+    if __name__ == '__main__':
+        app.run(debug=True)
