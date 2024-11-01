@@ -20,8 +20,10 @@
         <div class="painelLateral">
             <section class="form-cad">
                 <center>
+                   
                     <h1 class="Cadastrese">Cadastre-se</h1>
                     <p class="text">Informe os dados abaixo e tenha total acessoa a nossa IA</p>
+                    <a href="{{ url_for('chat') }}">link direto</a>
                 </center>
                 <div class="input-group-pnome">
                     <input autocomplete="name" required type="text" name="iptPnomeTcad" class="input-pnome">
@@ -38,7 +40,7 @@
                 </div>
                 <div class="input-group-senha1">
                     <button onclick="eyeopen(1)" type="button" id="hidepassword1" class="hidepassword">
-                        <img id="olhoaberto1" class="olhoaberto" src="{{ url_for('static', filename='images/logo.png') }}" alt="olho aberto">
+                        <img id="olhoaberto1" class="olhoaberto" src="{{ url_for('static', filename='imgs/visible.png') }}" alt="olho aberto">
                     </button>
                     <input autocomplete="current-password" required type="password" id="olhoabertocad1" name="iptsenha1Tcad" class="input-senha1">
                     <label class="user-label-senha1">Sua senha aqui</label>
@@ -46,7 +48,7 @@
                 
                 <div class="input-group-senha2">
                     <button onclick="eyeopen(2)" type="button" id="hidepassword2" class="hidepassword">
-                        <img id="olhoaberto2" class="olhoaberto" src="/Imgs Gerais/imgs/visible.png" alt="olho aberto">
+                        <img id="olhoaberto2" class="olhoaberto" src="{{ url_for('static', filename='imgs/visible.png') }}" alt="olho aberto">
                     </button>
                     <input autocomplete="current-password" required type="password" id="olhoabertocad2" name="iptsenha2Tcad" class="input-senha2">
                     <label class="user-label-senha2">Repita a senha</label>

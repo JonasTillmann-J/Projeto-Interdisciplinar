@@ -2,10 +2,6 @@ from flask import Flask, request, render_template
 import mysql.connector
 from mysql.connector import Error
 
-#então fabio só pra vc entender tem uma area naquele README que te
-#explica melhor oq vc vai ter que fazer pra manter a organização
-#espero que entenda. <3 
-
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
@@ -55,7 +51,12 @@ def cadastrar():
                 cursor.close()
                 connection.close()
 
-    return render_template("index.cadrastro.html")
+    return render_template("index.cadrastro.html")  # Corrigido o nome do template para cadastro
+
+# Rota para a página de chat
+@app.route('/chat')
+def chat():
+    return render_template("index.chat.html")  # Certifique-se de que o nome do arquivo está correto
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Texto com Rolagem</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .chat-area {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto; /* Permite rolar verticalmente */
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .input-container {
+            display: flex;
+            border-top: 1px solid #ccc;
+        }
+
+        .text-input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 0 0 5px 5px;
+            outline: none;
+            resize: none; /* Impede a redimensionamento manual */
+        }
+
+        .text-input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+        }
+
+        .text-input::placeholder {
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-area" id="chatArea">
+            <p>Se precisar de mais espaço, digite abaixo!</p>
+        </div>
+        <div class="input-container">
+            <textarea class="text-input" id="textInput" rows="2" placeholder="Digite sua mensagem..."></textarea>
+        </div>
+    </div>
+
+    <script>
+        const textInput = document.getElementById('textInput');
+        const chatArea = document.getElementById('chatArea');
+
+        textInput.addEventListener('input', function() {
+            // Ajusta a altura da área de texto automaticamente se necessário
+            this.style.height = 'auto'; // Reseta a altura para ajustar corretamente
+            this.style.height = `${this.scrollHeight}px`; // Define a altura com base na altura do conteúdo
+        });
+    </script>
+</body>
+</html>

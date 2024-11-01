@@ -11,10 +11,6 @@
 
 <body>
     <nav class="navbar" id="navbar">
-        <!--
-                Logo da Empresa
-        <img class="logo" src="" alt="">
-        -->
             <a class="element" href="/indexes/index.Hub.html">Produtos</a>
             <a class="element" href="/testes/indexteste.html">Cronogramas</a>
             <a class="element" href="#">Comunidade</a>
@@ -26,20 +22,23 @@
         <div class="checkbox-wrapper-35">
             <input value="private" name="switch" id="switch" type="checkbox" class="switch">
             <label for="switch">
-        <span class="switch-x-text">O Chat está</span>
-        <span class="switch-x-toggletext">
-          <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
-          <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
-        </span>
-      </label>
+                <span class="switch-x-text">O Chat está</span>
+                <span class="switch-x-toggletext">
+                    <span class="switch-x-unchecked"><span class="switch-x-hiddenlabel">Unchecked: </span>Off</span>
+                    <span class="switch-x-checked"><span class="switch-x-hiddenlabel">Checked: </span>On</span>
+                </span>
+            </label>
         </div>
         <div class="telachat">
-            <!-- Aqui vão os scripts para IA responder -->
+            <div class="messages" id="messages">
+                <p>aaaaaaaaaaaaaaaaaa</p>
+                <!-- As mensagens do chat vão aqui -->
+            </div>
+            <section class="input" id="input">
+                <button class="enviar" id="enviar"> > </button>
+                <textarea class="inputtxt" id="inputtxt" placeholder="Fale mais sobre seu projeto:" rows="1"></textarea>
+            </section>
         </div>
-        <section class="input" id="input">
-            <button class="enviar" id="enviar"> > </button>
-            <input type="text" class="inputtxt" id="inputtxt" placeholder="Fale mais sobre seu projeto:">
-        </section>
     </section>
     <script src="{{ url_for('static', filename='js/script.cadrastro.js') }}"></script>
 </body>

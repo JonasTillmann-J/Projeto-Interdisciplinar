@@ -1,8 +1,27 @@
+/* Variáveis no arquivo que podem ser utilizadas em qualquer lugar com a função var()
+
+   Geralmente, uso para manter um padrão nas medidas. Aqui não há muitos exemplos, mas, supondo que 
+   a --posicaoinput corresponda ao que é usado em uma tela de 1920p, em 1333p eu poderia apenas 
+   ajustar um valor para adequar corretamente. Deve haver uma medida mestre que, quando aplicada, 
+   modifica o elemento conforme cada tamanho de tela, funcionando apenas ao reduzir o valor base. 
+   No entanto, isso pode ser um pouco complicado de descobrir. 
+*/
+
 :root {
     --posicaoinput: 28%;
     --marginnav: 110px;
 }
 
+/* As configurações a seguir até o "@media(max-width: 1366px)" são para uma tela de 1920p, que
+   é o melhor ambiente de trabalho para mim e serve como base. O "@media(max-width: 1366px)" será
+   ativado quando um computador atender ao requisito de ter uma tela de 1366p. Isso refere-se à largura
+   da tela, mas também pode ser ajustado informando a altura, modificando apenas isso:
+
+   @media(max-width: 1366px) == @media(max-height: ???px)
+
+# IMPORTANTE #
+Abaixo, há informações importantes para você.
+*/ 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -217,7 +236,25 @@ input:valid~label {
     transform: translateY(-1px);
 }
 
-/*Telas menores que 1366px irá obedecer estás propriedades*/
+/* IMPORTANTE: INFORMAÇÕES ESSENCIAIS
+
+1. Telas de 1366p seguem os atributos especificados aqui. Apenas os atributos listados sofrerão alterações; os demais obedecerão ao
+padrão geral.
+
+2. Às vezes, o "@media(max-width: 1366px)" acha que só pq é grande vale por um 1920p, mas não é o caso. Se algum atributo
+não estiver respondendo ou mudando quando alterado neste arquivo, verifique no inspetor do navegador, na aba de estilos, se os
+atributos listados aqui estão ativados (não riscados) ou não (riscados). Como "@media(max-width: 1366px)" está ao final do arquivo,
+ele será exibido na mesma ordem no inspetor.
+
+3. Escreva apenas o necessário. A "maldição" do CSS é que, quanto mais linhas, mais internamente problemático ele se torna; isso é
+especialmente verdadeiro para "@media(max-width: 1366px)". Use os métodos `calc()` e `var()` conforme necessário e a vontade, mas
+evite muitos "@media" para diferentes resoluções, pois isso pode complicar o código.
+
+4. Para projetos futuros, "@media(max-width: 1366px)" pode ser útil ocasionalmente, mas, se o projeto se expandir, considere formas
+mais robustas, como automatização com JavaScript ou frameworks especializados em responsividade. O Chrome permite ajustar o tamanho da
+tela em pixels no inspetor, onde você pode experimentar a resolução 1366p em casa mesmo na tela 1920p, o @media, funcionaria no emulador
+de telas.
+*/
 @media(max-width: 1366px) {
     .input {
         width: 400px;
