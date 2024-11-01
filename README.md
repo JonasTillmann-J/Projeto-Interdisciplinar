@@ -1,6 +1,6 @@
 # Projeto-Interdisciplinar
-    # Descrição Geral
-    Este é um projeto interdisciplinar do curso Técnico em Desenvolvimento de Sistemas do CEDUP Hermann Hering, realizado entre agosto e novembro de 2024. A equipe do projeto é composta por: Jonas Tillmann Junior (gestão e programação), Fabio Henrique Laurentino       (programação), Igor Etur (documentação) e Nicole Diel (prototipagem do layout).
+# Descrição Geral
+Este é um projeto interdisciplinar do curso Técnico em Desenvolvimento de Sistemas do CEDUP Hermann Hering, realizado entre agosto e novembro de 2024. A equipe do projeto é composta por: Jonas Tillmann Junior (gestão e programação), Fabio Henrique Laurentino       (programação), Igor Etur (documentação) e Nicole Diel (prototipagem do layout).
 
 # Linguagens Utilizadas.
     -Python
