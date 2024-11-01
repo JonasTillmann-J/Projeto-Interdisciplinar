@@ -3,23 +3,23 @@
 Este é um projeto interdisciplinar do curso Técnico em Desenvolvimento de Sistemas do CEDUP Hermann Hering, realizado entre agosto e novembro de 2024. A equipe do projeto é composta por: Jonas Tillmann Junior (gestão e programação), Fabio Henrique Laurentino       (programação), Igor Etur (documentação) e Nicole Diel (prototipagem do layout).
 
 # Linguagens Utilizadas.
-    -Python
-    -SQL
-    -HTML/CSS
-    -JavaScript
+-Python
+-SQL
+-HTML/CSS
+-JavaScript
     
 # Tecnologias Utilizadas.
-    -Flask
-    -Visual Studio Code
-    -MySQL WorkBench
-    -Git
+-Flask
+-Visual Studio Code
+-MySQL WorkBench
+-Git
     
 # Logica de pastas e arquivos para o Flask
-    A estrutura de pastas do Flask foi projetada para organizar o código e recursos de forma eficiente, facilitando a manutenção e promovendo o trabalho colaborativo.
+A estrutura de pastas do Flask foi projetada para organizar o código e recursos de forma eficiente, facilitando a manutenção e promovendo o trabalho colaborativo.
 
-    1. O arquivo principal app.py contém o código central, incluindo rotas e configurações.
-    2. A pasta templates organiza os arquivos HTML da interface do usuário, que são renderizados com o motor de templates Jinja, permitindo separação clara entre backend e frontend.
-    3. A pasta static armazena arquivos estáticos como CSS, JavaScript e imagens, essencial para estilização e interatividade.
+1. O arquivo principal app.py contém o código central, incluindo rotas e configurações.
+2. A pasta templates organiza os arquivos HTML da interface do usuário, que são renderizados com o motor de templates Jinja, permitindo separação clara entre backend e frontend.
+3. A pasta static armazena arquivos estáticos como CSS, JavaScript e imagens, essencial para estilização e interatividade.
 
 # Exemplo de Estrutura de Pastas
       meu_projeto/
@@ -38,7 +38,7 @@ Este é um projeto interdisciplinar do curso Técnico em Desenvolvimento de Sist
                     └── imagem.png    # Exemplo de imagem
 
 # Implementação com Flask
-    O Flask foi escolhido pela sua simplicidade e eficiência como servidor para a aplicação. Ele permite uma estrutura modular e encapsulada que facilita a implementação de funcionalidades de inteligência artificial e segurança no envio e recebimento de dados.         Cada rota terá funções específicas para gerenciar as telas, garantindo estabilidade e segurança. Abaixo, um exemplo de implementação de rotas e renderização de templates:
+O Flask foi escolhido pela sua simplicidade e eficiência como servidor para a aplicação. Ele permite uma estrutura modular e encapsulada que facilita a implementação de funcionalidades de inteligência artificial e segurança no envio e recebimento de dados.         Cada rota terá funções específicas para gerenciar as telas, garantindo estabilidade e segurança. Abaixo, um exemplo de implementação de rotas e renderização de templates:
     
 Exemplo de Código com Flask com o nosso padrão
 
