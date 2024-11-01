@@ -4,14 +4,20 @@ Este é um projeto interdisciplinar do curso Técnico em Desenvolvimento de Sist
 
 # Linguagens Utilizadas.
 -Python
+
 -SQL
+
 -HTML/CSS
+
 -JavaScript
     
 # Tecnologias Utilizadas.
 -Flask
+
 -Visual Studio Code
+
 -MySQL WorkBench
+
 -Git
     
 # Logica de pastas e arquivos para o Flask
