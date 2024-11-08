@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import mysql.connector
 from mysql.connector import Error
+import google.generativeai as genai
 
 app = Flask(__name__)
 
@@ -54,13 +55,28 @@ def chat():
 # Rota de API para o chat
 @app.route('/api/chat', methods=['POST'])
 def IAgenerativa():
+    # Extrai a mensagem do usuário do JSON recebido
     data = request.get_json()
     user_message = data.get('message')
-    if not user_message:
-        return jsonify({'error': 'Mensagem não fornecida'}), 400
 
-    resposta = f"Você disse: {user_message}"
-    return jsonify({'response': resposta})
+    # Configura a chave da API da IA generativa
+    genai.configure(api_key='AIzaSyAt6SsBmKYMT5538fLdwkmGtUsCdYU4cRQ')  # Substitua pela sua chave de API válida
+
+    # Inicializa o modelo da IA
+    model = genai.GenerativeModel('gemini-1.5-flash')
+
+    # Define o prompt com a mensagem do usuário
+    prompt = f"Usuário disse: {user_message}"
+
+    # Gera a resposta da IA com base no prompt
+    try:
+        response = model.generate_content(prompt)
+        ia_response = response.text if response and response.text else "Desculpe, não consegui gerar uma resposta no momento."
+    except Exception as e:
+        ia_response = f"Erro ao gerar resposta: {e}"
+
+    # Retorno da resposta da IA como JSON
+    return jsonify({'response': ia_response})
 
 @app.route('/login')
 def login():
