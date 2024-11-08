@@ -74,130 +74,6 @@ body {
 }
 /*/----------------------------Navegação---------------------------------------*/
 /*--------------------------------Chat-----------------------------------------*/
-/*-----------------------------Chat < switch-----------------------------------*/
-.checkbox-wrapper-35 .switch {
-    display: none;
-    z-index: 99;
-
-}
-.checkbox-wrapper-35 .switch+label {
-    z-index: 99;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    color: #24242a;
-    cursor: pointer;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 15px;
-    position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    top: 10px;
-    left: 10px;
-}
-.checkbox-wrapper-35 .switch+label::before,
-.checkbox-wrapper-35 .switch+label::after {
-    content: '';
-    display: block;
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch+label::before {
-    background-color: #05012c;
-    border-radius: 500px;
-    height: 15px;
-    margin-right: 8px;
-    -webkit-transition: background-color 0.125s ease-out;
-    transition: background-color 0.125s ease-out;
-    width: 25px;
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch+label::after {
-    z-index: 99;
-    background-color: #fff;
-    border-radius: 13px;
-    box-shadow: 0 3px 1px 0 rgba(37, 34, 71, 0.05), 0 2px 2px 0 rgba(37, 34, 71, 0.1), 0 3px 3px 0 rgba(37, 34, 71, 0.05);
-    height: 13px;
-    left: 1px;
-    position: absolute;
-    top: 1px;
-    -webkit-transition: -webkit-transform 0.125s ease-out;
-    transition: -webkit-transform 0.125s ease-out;
-    transition: transform 0.125s ease-out;
-    transition: transform 0.125s ease-out, -webkit-transform 0.125s ease-out;
-    width: 13px;
-}
-.checkbox-wrapper-35 .switch+label .switch-x-text {
-    display: block;
-    margin-right: .3em;
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch+label .switch-x-toggletext {
-    display: block;
-    font-weight: bold;
-    height: 15px;
-    overflow: hidden;
-    position: relative;
-    width: 25px;
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch+label .switch-x-unchecked,
-.checkbox-wrapper-35 .switch+label .switch-x-checked {
-    left: 0;
-    z-index: 99;
-    position: absolute;
-    top: 0;
-    -webkit-transition: opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
-    transition: opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
-    transition: transform 0.125s ease-out, opacity 0.125s ease-out;
-    transition: transform 0.125s ease-out, opacity 0.125s ease-out, -webkit-transform 0.125s ease-out;
-}
-.checkbox-wrapper-35 .switch+label .switch-x-unchecked {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch+label .switch-x-checked {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch+label .switch-x-hiddenlabel {
-    position: absolute;
-    visibility: hidden;
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch:checked+label::before {
-    background-color: #ffb500;
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch:checked+label::after {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0);
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch:checked+label .switch-x-unchecked {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-    z-index: 99;
-}
-.checkbox-wrapper-35 .switch:checked+label .switch-x-checked {
-    opacity: 1;
-    z-index: 99;
-    -webkit-transform: none;
-    transform: none;
-}
-/*/-----------------------------chat < switch----------------------------------*/
 .chat {
     position: absolute;
     left: 50%;
@@ -210,12 +86,22 @@ body {
     border-radius: 20px;
     overflow: hidden;
 }
-
+.ativo{
+    position: absolute;
+    left: 50%;
+    top: 14.58%;
+    transform: translate(-50%, -0%);
+    width: 50%;
+    height: 100px;
+    background-color: #5D5B6D;
+    border: 3px solid #5D5B6D;
+    border-radius: 20px;
+    overflow: hidden;
+}
 .telachat {
     position: relative;
     height: 100%;
 }
-
 .messages {
     height: 85%;
     overflow-y: auto; /* Permite rolagem vertical */
@@ -223,8 +109,37 @@ body {
     background-color: #ff0000; /* Cor de fundo para as mensagens */
     border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior */
 }
+/* Estilo geral para todas as mensagens */
+.message {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 60%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para a mensagem do usuário (alinhada à direita) */
+  .user-message {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    align-self: flex-end;  /* Alinha a mensagem à direita */
+    text-align: right;
+  }
+  
+  /* Estilo para a resposta da IA (alinhada à esquerda) */
+  .ia-message {
+    background-color: #f8d7da;
+    color: #842029;
+    align-self: flex-start;  /* Alinha a mensagem à esquerda */
+    text-align: left;
+  }
+  
+  /* Container para as mensagens, se necessário */
+  #messages {
+    display: flex;
+    flex-direction: column;
+  }
 /*/------------------------------Input < Chat-----------------------------------------*/
-
 .input {
     position: sticky;
     bottom: 0; /* Fica fixo na parte inferior */
@@ -236,7 +151,6 @@ body {
     align-items: center; /* Alinha os itens verticalmente ao centro */
     border-radius: 10px; /* Mantido */
 }
-
 .inputtxt {
     position: relative;
     left: -8%;
@@ -253,12 +167,10 @@ body {
     overflow-y: auto; /* Permite rolagem vertical se o texto exceder a altura */
     white-space: pre-wrap; /* Faz com que quebre linhas corretamente e respeite espaços */
 }
-
 .inputtxt::placeholder {
     color: #a6a0a0;
     font-size: 1.5vh;
 }
-
 /*------------------------------Input < Btnenviar-----------------------------------------*/
 .enviar {
     z-index: 99;
@@ -273,7 +185,6 @@ body {
     background: transparent;
     transition: background 0.5s ease-in-out, border 0.5s ease-in-out, color 0.5s ease-in-out;
 }
-
 .enviar:hover {
     background: rgb(0, 0, 0);
     border: 1px solid rgb(53, 53, 53);
@@ -282,3 +193,20 @@ body {
 /*/------------------------------Input < Btnenviar-----------------------------------------*/
 /*/------------------------------Input < Chat-----------------------------------------*/
 /*--------------------------------Chat-----------------------------------------*/
+@media(max-width: 1024px){
+    .chat{
+        width: 70%;
+        height: 84%;
+    }
+    .inputtxt{
+        left: -11%;
+    }
+    .navbar{
+        position: relative;
+        margin:10px 0px 0px 0px;
+        left:55.5%;
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
+    }
+}

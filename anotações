@@ -1,2 +1,47 @@
 id-callisto@snappy-mark-435323-i7.iam.gserviceaccount.com
-AIzaSyAt6SsBmKYMT5538fLdwkmGtUsCdYU4cRQ
+
+script.chat.js
+/*
+// Função para salvar o estado do switch no LocalStorage
+function salvarEstado() {
+  var checkbox = document.getElementById('switch');
+  // Salva o estado do checkbox no LocalStorage (true ou false)
+  localStorage.setItem('switchEstado', checkbox.checked);
+}
+
+// Função para restaurar o estado do switch quando a página é carregada
+function restaurarEstado() {
+  var checkbox = document.getElementById('switch');
+  var estadoSalvo = localStorage.getItem('switchEstado');
+  var telachat = document.getElementById('telachat');
+
+  // Verifica se o estado foi salvo no LocalStorage
+  if (estadoSalvo !== null) {
+    checkbox.checked = (estadoSalvo === 'true'); // Converte a string 'true' em booleano
+  }
+
+  // Ajusta a exibição do chat com base no estado do checkbox
+  if (checkbox.checked) {
+    chat.classList.add('ativo'); // Aplica o estilo para o estado "ativo"
+    chat.classList.remove('telachat')
+  } else {
+    chat.classList.remove('ativo'); // Remove o estilo para o estado "inativo"
+    chat.classList.add('telachat')
+  }
+}
+
+// Evento para salvar o estado sempre que o checkbox for alterado
+document.addEventListener('DOMContentLoaded', function() {
+  var checkbox = document.getElementById('switch');
+
+  // Verifica se o checkbox existe antes de adicionar o evento
+  if (checkbox) {
+    checkbox.addEventListener('change', function() {
+      salvarEstado();
+      restaurarEstado(); // Atualiza a exibição do chat ao alterar o switch
+    });
+  }
+
+  // Restaura o estado do switch e a exibição do chat quando a página for carregada
+  restaurarEstado();
+});*/
