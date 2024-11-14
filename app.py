@@ -6,11 +6,13 @@ import google.generativeai as genai
 app = Flask(__name__)
 
 # Rota para a página inicial/cadastro
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/cadastrar', methods=['GET', 'POST'])
 def cadastrar():
+    connection = None
+    cursor = None
     if request.method == 'POST':
         usuario = 'root'
-        senha = ''
+        senha = '12568709Fa!'
         database = 'Callista'
         host = 'localhost'
 
@@ -21,26 +23,25 @@ def cadastrar():
                 password=senha,
                 database=database
             )
-
+            #Verificação se ha Email Igual para realizar cadastro
             if connection.is_connected():
                 cursor = connection.cursor()
                 email_cadastro = request.form['iptEmailTcad']
-                cursor.execute("SELECT Email FROM Cadastro WHERE Email=%s", (email_cadastro))
+                cursor.execute("SELECT Email FROM Cadastro WHERE Email=%s", (email_cadastro,))
                 record = cursor.fetchone()
 
                 if record:
                     return "Conta já existente com esse email."
                 else:
-                
+                #Se não houver Email cadastrado sera cadastrado nessa condição
                     primeiro_nome = request.form['iptPnomeTcad']
                     segundo_nome = request.form['iptSnomeTcad']
                     primeira_senha = request.form['iptsenha1Tcad']
                     segunda_senha = request.form['iptsenha2Tcad']
-                    sql_cadastrado = """
-                    INSERT INTO Cadastro (PNomeCadastro, SNomeCadastro, PSenhaCadastro, SSenhaCadastro, Email)
-                    VALUES (%s, %s, %s, %s, %s)
-                    """
-                    cursor.execute(sql_cadastrado, (primeiro_nome, segundo_nome, primeira_senha, segunda_senha, email_cadastro))
+                    cursor.execute( 
+                      "INSERT INTO Cadastro (PNomeCadastro, SNomeCadastro, PSenhaCadastro, SSenhaCadastro, Email) VALUES (%s, %s, %s, %s, %s)",
+                      (primeiro_nome, segundo_nome, primeira_senha, segunda_senha, email_cadastro)
+                      )
                     connection.commit()
                     return "Usuário cadastrado"
             else:
@@ -49,15 +50,16 @@ def cadastrar():
         except Error as e:
             return f"Erro ao conectar ao banco de dados: {e}"
 
+         #Apos todo o processo havera o fechamento da conexao do Banco de Dados
         finally:
-            if connection.is_connected():
-                cursor.close()
-                connection.close()
-
+            if  cursor:
+                cursor.close
+            if connection and connection.is_connected():
+                connection.close
 
     return render_template("index.cadrastro.html")
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         try:
