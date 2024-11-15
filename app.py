@@ -5,6 +5,11 @@ import google.generativeai as genai
 
 app = Flask(__name__)
 
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template('index.Hub.html')
+
 # Rota para a página inicial/cadastro
 @app.route('/cadastrar', methods=['GET', 'POST'])
 def cadastrar():
@@ -32,16 +37,16 @@ def cadastrar():
                     return jsonify({"message":" As senhas nâo são iguais. Tente novamente."})
 
                 cursor.execute("SELECT Email FROM Cadastro WHERE Email=%s", (email_cadastro,))
-
+    
                 if cursor.fetchone():
                     return "Conta já existente com esse email."
                 else:
                     cursor.execute(
-                        "INSERT INTO Cadastro (PrimeiroNome, SegundoNome, PrimeiraSenha, SegundaSenha, Email) VALUES (%s, %s, %s, %s, %s)",
+                        "INSERT INTO Cadastro (PNomeCadastro, SNomeCadastro, PSenhaCadastro, SSenhaCadastro, Email) VALUES (%s, %s, %s, %s, %s)",
                         (primeiro_nome, segundo_nome, primeira_senha, segunda_senha, email_cadastro)
                     )
                     connection.commit()
-                    return "Usuário cadastrado com sucesso!"
+                    return render_template('index.chat.html')
             else:
                 return "Conexão com o banco de dados falhou."
 
@@ -91,6 +96,10 @@ def login():
 
 
     return render_template("index.login.html")
+
+@app.route('/sobrenos')
+def sobrenos():
+    return render_template('index.sobrenos.html')
 
 #----------------------------------------------------------------------- Chat -----------------------------------------------------------------------------
 

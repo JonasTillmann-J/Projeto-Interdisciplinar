@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.cadastro.css') }}">
     <!--
     iptPnomeTcad == input primeiro nome pro cadrastro
@@ -20,11 +20,9 @@
         <div class="painelLateral">
             <section class="form-cad">
                 <center>
-                   
                     <h1 class="Cadastrese">Cadastre-se</h1>
                     <p class="text">Informe os dados abaixo e tenha total acessoa a nossa IA</p>
-                    <a href="{{ url_for('chat') }}">link direto</a>
-                    <a href="{{ url_for('login') }}">link direto</a>
+                    <a href="{{ url_for('sobrenos') }}">link direto</a>
                 </center>
                 <div class="input-group-pnome">
                     <input autocomplete="name" required type="text" name="iptPnomeTcad" class="input-pnome">

@@ -4,19 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela/Inicial/Chat</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.chat.css') }}">
     
 </head>
 
 <body>
     <nav class="navbar" id="navbar">
-            <a class="element" href="/indexes/index.Hub.html">Produtos</a>
-            <a class="element" href="/testes/indexteste.html">Cronogramas</a>
-            <a class="element" href="#">Comunidade</a>
-            <a class="element" href="#">Sobre nós</a>
-            <a href="/indexes/Login/index.login.html" class="signin">Login</a>
-            <a href="/indexes/cadratro/index.cadrastro.html" class="register">Cadastrar-se</a>
+            <a class="element" href="{{ url_for('sobrenos') }}">Sobre nós</a>
+            <a href="{{ url_for('login') }}" class="signin">Login</a>
+            <a href="{{ url_for('cadastrar') }}" class="register">Cadastrar-se</a>
     </nav>
     <section class="chat" id="chat">
         <div class="telachat">

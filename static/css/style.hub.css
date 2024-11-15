@@ -1,3 +1,9 @@
+
+
+
+
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -13,7 +19,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     background: transparent;
-    left: 47%;
+    left: 67%;
 }
 .navbar a {
     margin: 0 10px;
@@ -41,6 +47,13 @@ body {
     background-color: #5918db;
     transition: width 0.5s ease-in-out;
   }
+
+  .Inicio{
+    position: absolute;
+    left: 42%;
+    top: 40%; 
+  }
+
   .navbar .element:hover::before {
     width: 100%;
   }

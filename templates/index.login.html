@@ -16,7 +16,6 @@
     <section class="left-panel">
         <div class="nav">
             <a href="{{ url_for('chat') }}">Sobre nós</a>
-            <a href="index.html">Produtos</a>
             <a href="{{ url_for('cadastrar') }}">Cadastrar-se</a>
         </div>
         <img class="img" src="/Imgs Gerais/imgs/imagem de preenchimento.jpeg" alt="a">
@@ -43,7 +42,7 @@
             </form>
         </section>
         <p class="signup">Ainda não tem uma conta?
-            <a rel="noopener noreferrer" href="#" class="">Cadastre-se aqui</a>
+            <a rel="noopener noreferrer" href="{{ url_for('cadastrar') }}" class="">Cadastre-se aqui</a>
         </p>
     </div>
     <script src="{{ url_for('static', filename='js/script.login.js') }}"></script>

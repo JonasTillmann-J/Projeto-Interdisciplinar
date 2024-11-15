@@ -15,6 +15,31 @@ function eyeopen(inputNumber) {
     }
 }
 
+
+function VerificarSenha(){
+    const senha = document.getElementById('olhoabertocad1').value;
+    const confirmarSenha = document.getElementById('olhoabertocad2').value;
+
+    if (senha !== confirmarSenha) {
+        alert('As senhas não coincidem.');
+    } else {
+        // Enviar os dados para o Flask
+        fetch('/cadastrar', {
+            method: 'POST',
+            body: JSON.stringify({ senha })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Tratar a resposta do Flask
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Erro ao enviar os dados:', error);
+        });
+    }
+};
+
+/*
 function VerificaSenha(){
      const Senha1 = document.getElementById('olhoabertocad1').value;
      const Senha2 = document.getElementById('olhoabertocad2').value; 
@@ -25,3 +50,4 @@ function VerificaSenha(){
          return false;
         } 
     }
+*/

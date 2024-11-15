@@ -11,15 +11,20 @@
         <!--Logo da Empresa-->
         <img class="logo" src="" alt="">
         <div class="navbar">
-            <a class="element" href="/testes/indexteste.html">Produtos</a>
-            <a class="element" href="#">Cronogramas</a>
-            <a class="element" href="#">Comunidade</a>
-            <a class="element" href="#">Sobre nós</a>
-            <a href="#" class="signin">Login</a>
-            <a href="#" class="register">Cadastrar-se</a>
+            
+            <a class="element" href="{{ url_for('sobrenos') }}">Sobre nós</a>
+            <a href="{{ url_for('login') }}" class="signin">Login</a>
+            <a href="{{ url_for('cadastrar') }}" class="register">Cadastrar-se</a>
         </div>
     </nav>
-    
+        <div>
+
+            <h1 class="Inicio">
+                Bem-Vindo à Callista
+            </h1>
+            
+        </div>
+
     <script src="{{ url_for('static', filename='js/script.hub.js') }}"></script>
 </body>
 </html>

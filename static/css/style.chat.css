@@ -11,6 +11,17 @@ body {
 }
 /*/------------------------------Gerais----------------------------------------*/
 /*----------------------------Navegação---------------------------------------*/
+
+.navbar {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 20px 10px;
+    background: transparent;
+    left: 0%;
+}
+
 .navbar a {
     text-decoration: none;
     color: black;
@@ -106,7 +117,7 @@ body {
     height: 85%;
     overflow-y: auto; /* Permite rolagem vertical */
     padding: 10px;
-    background-color: #ff0000; /* Cor de fundo para as mensagens */
+    background-color: #bd7e4b; /* Cor de fundo para as mensagens */
     border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior */
 }
 /* Estilo geral para todas as mensagens */
