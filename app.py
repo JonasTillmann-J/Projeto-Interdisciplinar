@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect, url_for, jsonify
 import mysql.connector
 from mysql.connector import Error
 import google.generativeai as genai
@@ -11,74 +11,37 @@ def cadastrar():
     connection = None
     cursor = None
     if request.method == 'POST':
-        usuario = 'root'
-        senha = '12568709Fa!'
-        database = 'Callista'
-        host = 'localhost'
-
-        try:
-            connection = mysql.connector.connect(
-                host=host,
-                user=usuario,
-                password=senha,
-                database=database
-            )
-            #Verificação se ha Email Igual para realizar cadastro
-            if connection.is_connected():
-                cursor = connection.cursor()
-                email_cadastro = request.form['iptEmailTcad']
-                cursor.execute("SELECT Email FROM Cadastro WHERE Email=%s", (email_cadastro,))
-                record = cursor.fetchone()
-
-                if record:
-                    return "Conta já existente com esse email."
-                else:
-                #Se não houver Email cadastrado sera cadastrado nessa condição
-                    primeiro_nome = request.form['iptPnomeTcad']
-                    segundo_nome = request.form['iptSnomeTcad']
-                    primeira_senha = request.form['iptsenha1Tcad']
-                    segunda_senha = request.form['iptsenha2Tcad']
-                    cursor.execute( 
-                      "INSERT INTO Cadastro (PNomeCadastro, SNomeCadastro, PSenhaCadastro, SSenhaCadastro, Email) VALUES (%s, %s, %s, %s, %s)",
-                      (primeiro_nome, segundo_nome, primeira_senha, segunda_senha, email_cadastro)
-                      )
-                    connection.commit()
-                    return "Usuário cadastrado"
-            else:
-                return "Conexão Inválida"
-
-        except Error as e:
-            return f"Erro ao conectar ao banco de dados: {e}"
-
-         #Apos todo o processo havera o fechamento da conexao do Banco de Dados
-        finally:
-            if  cursor:
-                cursor.close
-            if connection and connection.is_connected():
-                connection.close
-
-    return render_template("index.cadrastro.html")
-
-@app.route('/', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
         try:
             connection = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='',
+                password='12568709Fa!',
                 database='Callista'
-            ) 
+            )
+
             if connection.is_connected():
                 cursor = connection.cursor()
-                email_login = request.form['iptEmailLogin']
-                senha_login = request.form['iptSenhaLogin']
-                cursor.execute("SELECT Email,Senha FROM Login WHERE Email AND Senha==%s", (email_login,senha_login))
+                email_cadastro = request.form['iptEmailTcad']
+                primeiro_nome = request.form['iptPnomeTcad']
+                segundo_nome = request.form['iptSnomeTcad']
+                primeira_senha = request.form['iptsenha1Tcad']
+                segunda_senha = request.form['iptsenha2Tcad']
+                
+                # Verificar se as senhas são iguais
+                if primeira_senha != segunda_senha:
+                    return jsonify({"message":" As senhas nâo são iguais. Tente novamente."})
+
+                cursor.execute("SELECT Email FROM Cadastro WHERE Email=%s", (email_cadastro,))
+
                 if cursor.fetchone():
-                   email_login == 'iptEmailLogin' and senha_login == 'iptSenhaLogin'
-                   render_template['index.Chat.html']
+                    return "Conta já existente com esse email."
                 else:
-                 return print("Usuario Não Cadastrado")
+                    cursor.execute(
+                        "INSERT INTO Cadastro (PrimeiroNome, SegundoNome, PrimeiraSenha, SegundaSenha, Email) VALUES (%s, %s, %s, %s, %s)",
+                        (primeiro_nome, segundo_nome, primeira_senha, segunda_senha, email_cadastro)
+                    )
+                    connection.commit()
+                    return "Usuário cadastrado com sucesso!"
             else:
                 return "Conexão com o banco de dados falhou."
 
@@ -86,11 +49,48 @@ def login():
             return f"Erro ao conectar ao banco de dados: {e}"
 
         finally:
-            if connection.is_connected():
+            if cursor:
                 cursor.close()
+            if connection and connection.is_connected():
                 connection.close()
 
-    return render_template("index.Chat.html")
+    return render_template("index.cadrastro.html")
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        try:
+            cursor = None
+            connection = None
+            connection = mysql.connector.connect(
+                host='localhost',
+                user='root',
+                password='12568709Fa!',
+                database='Callista'
+            ) 
+            if connection.is_connected():
+                cursor = connection.cursor()
+                email_login = request.form['iptEmailLogin']
+                senha_login = request.form['iptSenhaLogin']
+                cursor.execute("SELECT Email,Senha FROM Login WHERE Email = %s AND Senha=%s", (email_login,senha_login))
+                if cursor.fetchone():
+                  return redirect(url_for('chat'))
+                else:
+                 return "Usuario não cadastrado"
+            else:
+                return "Conexão com o banco de dados falhou."
+
+        except Error as e:
+            return f"Erro ao conectar ao banco de dados: {e}"
+
+        finally:
+            if  cursor:
+                cursor.close
+            if connection and connection.is_connected():
+                connection.close
+
+
+    return render_template("index.login.html")
 
 #----------------------------------------------------------------------- Chat -----------------------------------------------------------------------------
 

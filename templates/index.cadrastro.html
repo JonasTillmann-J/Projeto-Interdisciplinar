@@ -51,14 +51,16 @@
                     <button onclick="eyeopen(2)" type="button" id="hidepassword2" class="hidepassword">
                         <img id="olhoaberto2" class="olhoaberto" src="{{ url_for('static', filename='imgs/visible.png') }}" alt="olho aberto">
                     </button>
+
                     <input autocomplete="current-password" required type="password" id="olhoabertocad2" name="iptsenha2Tcad" class="input-senha2">
                     <label class="user-label-senha2">Repita a senha</label>
-                </div>
+                    <div class="SenhaIncorreta" id="VerificarSenhas"> <p class="Senhas" id="ConfereSenhas"></p> </div>
             </section>
             <button type="submit" id="btnEntrarLOGIN" class="btn-submit" onclick="tclaEnter()">Entrar</button> 
         </div>
     </form>
     <script src="{{ url_for('static', filename='js/script.cadrastro.js') }}"></script>
+
 </body>
 
 </html>

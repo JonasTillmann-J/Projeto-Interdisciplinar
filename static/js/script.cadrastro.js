@@ -14,3 +14,14 @@ function eyeopen(inputNumber) {
         imageField.src = '/static/imgs/visible.png'; // Restaurar o ícone
     }
 }
+
+function VerificaSenha(){
+     const Senha1 = document.getElementById('olhoabertocad1').value;
+     const Senha2 = document.getElementById('olhoabertocad2').value; 
+     if (Senha1 === Senha2){
+         document.getElementById('ConfereSenhas').innerHTML = '';
+         return true;
+        }else { document.getElementById('ConfereSenhas').innerHTML = '<p class="Senhas" id="ConfereSenhas">Senhas estão Diferentes, por favor verifique</p>'; 
+         return false;
+        } 
+    }
