@@ -16,38 +16,22 @@ function eyeopen(inputNumber) {
 }
 
 
-function VerificarSenha(){
-    const senha = document.getElementById('olhoabertocad1').value;
-    const confirmarSenha = document.getElementById('olhoabertocad2').value;
 
-    if (senha !== confirmarSenha) {
-        alert('As senhas não coincidem.');
-    } else {
-        // Enviar os dados para o Flask
-        fetch('/cadastrar', {
-            method: 'POST',
-            body: JSON.stringify({ senha })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Tratar a resposta do Flask
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Erro ao enviar os dados:', error);
-        });
-    }
-};
-
-/*
 function VerificaSenha(){
-     const Senha1 = document.getElementById('olhoabertocad1').value;
-     const Senha2 = document.getElementById('olhoabertocad2').value; 
-     if (Senha1 === Senha2){
-         document.getElementById('ConfereSenhas').innerHTML = '';
-         return true;
-        }else { document.getElementById('ConfereSenhas').innerHTML = '<p class="Senhas" id="ConfereSenhas">Senhas estão Diferentes, por favor verifique</p>'; 
-         return false;
-        } 
-    }
-*/
+    let Senha1 = document.getElementById('olhoabertocad1').value;
+    let Senha2 = document.getElementById('olhoabertocad2').value;
+    let Mensagem = document.getElementById('mensagem');
+
+    if (Senha1.length != 0) {
+        if (Senha1 === Senha2) {
+            Mensagem.textContent = "Senhas Iguais";
+            Mensagem.style.backgroundColor = "#4CAF50";  // Mensagem de sucesso
+            window.location.href = "/chat";  // Redireciona para a página de chat
+            return true;
+        } else {
+            Mensagem.textContent = "Senhas Não Conferem";
+            Mensagem.style.backgroundColor = "#ff4d4d";  // Mensagem de erro
+        }
+    return false;  // Impede o envio do formulário para permitir a verificação de senha
+}
+}

@@ -30,12 +30,8 @@ def cadastrar():
                 primeiro_nome = request.form['iptPnomeTcad']
                 segundo_nome = request.form['iptSnomeTcad']
                 primeira_senha = request.form['iptsenha1Tcad']
-                segunda_senha = request.form['iptsenha2Tcad']
-                
-                # Verificar se as senhas são iguais
-                if primeira_senha != segunda_senha:
-                    return jsonify({"message":" As senhas nâo são iguais. Tente novamente."})
-
+                segunda_senha = request.form['iptsenha2Tcad'] 
+               
                 cursor.execute("SELECT Email FROM Cadastro WHERE Email=%s", (email_cadastro,))
     
                 if cursor.fetchone():
@@ -81,7 +77,7 @@ def login():
                 if cursor.fetchone():
                   return redirect(url_for('chat'))
                 else:
-                 return "Usuario não cadastrado"
+                 return 
             else:
                 return "Conexão com o banco de dados falhou."
 
