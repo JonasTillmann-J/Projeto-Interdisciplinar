@@ -22,7 +22,19 @@ function VerificaSenha(){
     let Senha2 = document.getElementById('olhoabertocad2').value;
     let Mensagem = document.getElementById('mensagem');
 
-    if (Senha1.length != 0) {
+    const hasUppercase = /[A-Z]/.test(Senha1);
+    const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(Senha1);
+
+    if (Senha1.length != 8) {
+     Mensagem.textContent = "As senhas devem conter no minimo 8 caracteres.";
+     Mensagem.style.backgroundColor = "#ff4d4d";
+     return false;
+    }
+    if (!hasUppercase && !hasSpecialChar) {
+         Mensagem.textContent = "A senha deve conter pelo menos uma letra maiúscula ou um caractere especial";
+         Mensagem.style.backgroundColor = "#ff4d4d"; // Mensagem de erro return false; // Impede o envio do formulário }
+         return false;
+    }
         if (Senha1 === Senha2) {
             Mensagem.textContent = "Senhas Iguais";
             Mensagem.style.backgroundColor = "#4CAF50";  // Mensagem de sucesso
@@ -34,4 +46,6 @@ function VerificaSenha(){
         }
     return false;  // Impede o envio do formulário para permitir a verificação de senha
 }
-}
+
+
+

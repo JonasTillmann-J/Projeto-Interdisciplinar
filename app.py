@@ -102,7 +102,7 @@ def sobrenos():
 # Rota para a página de chat
 @app.route('/chat')
 def chat():
-    return render_template("index.chat.html")
+    return render_template("index.Chat.html")
 
 # Rota de API para o chat
 @app.route('/api/chat', methods=['POST'])

@@ -10,7 +10,9 @@
         <h1 class="Titulo">Callista</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <a class="element" href="{{ url_for('index') }}">HUB</a>
+                <a href="{{ url_for('login') }}" class="signin">Login</a>
+
                 <li><a href="#">Produtos</a></li>
                 <li><a href="#">Contato</a></li>
             </ul>
@@ -20,13 +22,13 @@
     <main>
         <section id="sobre-nos">
             <h2>Sobre Nós</h2>
-            <p>Somos uma empresa apaixonada por tecnologia e inovação. Nosso objetivo é oferecer soluções personalizadas para nossos clientes.</p>
+            <p>Somos uma empresa que adora ajudar seus clientes e alunos onde nossa principal ideia é na facilitação de trabalhos curriculares.</p>
             <p>Nossa equipe é composta por profissionais altamente qualificados e experientes, que estão sempre buscando as melhores práticas do mercado.</p>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Callista. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Callisto. Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>

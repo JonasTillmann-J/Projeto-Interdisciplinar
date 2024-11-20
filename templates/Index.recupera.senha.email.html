@@ -13,9 +13,11 @@
         <!---->
         <img class="logo" src="/Imgs Gerais/imgs/neguinmelancia.png" alt="">
         <nav class="nav" id="nav">
-            <a href="#" class="elemento" id="elemento">< Voltar</a>
-            <a href="#" class="elemento" id="elemento">Login</a>
+            <a href="#" class="elemento" id="elemento">Voltar</a>
+            <a href="{{ url_for('login') }}" class="signin">Login</a>
             <a href="#" class="elemento" id="elemento">Ajuda</a>
+            <a class="element" href="{{ url_for('index') }}">HUB</a>
+
         </nav>
     </section>
     <div class="caixa">
