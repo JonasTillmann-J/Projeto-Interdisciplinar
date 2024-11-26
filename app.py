@@ -6,7 +6,6 @@ import google.generativeai as genai
 
 app = Flask(__name__)
 
-
 @app.route('/', methods=['GET', 'POST'])
 def hub():
     return render_template('index.Hub.html')
@@ -24,7 +23,6 @@ def cadastrar():
                 password='Root12345@',
                 database='Callista'
             )
-
             if connection.is_connected():
                 cursor = connection.cursor()
                 email_cadastro = request.form['iptEmailTcad']
