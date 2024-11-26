@@ -10,10 +10,10 @@ function tclaEnter(event) {
 function eyeopen() {
     if (password.type == "password") {
         password.type = "text"
-        olhoaberto.src = '/Imgs Gerais/imgs/hide.png';
+        olhoaberto.src = '/static/imgs/visible.png';
     } else {
         password.type = "password"
-        olhoaberto.src = '/Imgs Gerais/imgs/visible.png';
+        olhoaberto.src = '/static/imgs/hide.png';
     }
 }
 

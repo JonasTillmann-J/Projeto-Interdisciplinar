@@ -1,10 +1,17 @@
-
+:root{
+  --CinzaAzulado:#7d84b9;
+    --AzulClaro:#36639c;
+    --AzulEscuro:#052a5e;
+    --PretoAzulado:#020c25;
+    --VermelhoTerra:#651f17;
+    --Laranja:#f06929;
+}
 * {
   margin: 0;
   padding: 0;
 }
 .form-cad {
-  background-color: #5d5b6d;
+  background-color: --;
   width: 95%;
   height: 90%;
   position: relative;

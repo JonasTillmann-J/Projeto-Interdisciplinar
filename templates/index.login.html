@@ -11,18 +11,20 @@
     input senha == iptSenhaLogin
     input email == iptEmailLogin
 -->
-
 <body>
     <section class="left-panel">
-        <div class="nav">
+        <nav class="nav">
             <a href="{{ url_for('sobrenos') }}">Sobre nós</a>
             <a href="{{ url_for('cadastrar') }}">Cadastrar-se</a>
-            <a class="element" href="{{ url_for('index') }}">HUB</a>
+            <a class="element" href="{{ url_for('hub') }}">Hub</a>
+        </nav>
+        <div class="img">
+            <img class="geniodadiv" src="/static/imgs/iamgem.login.png" alt="">
         </div>
-        <img class="img" src="/Imgs Gerais/imgs/imagem de preenchimento.jpeg" alt="a">
     </section>
     <div class="right-panel">
-        <img class="logo" src="/Imgs Gerais/imgs/neguinmelancia.png" alt="Logo">
+        <div class="geniodadiv2" >
+        <img class="logo" src="/static/imgs/logo.png" alt="">
         <section class="loginform" id="loginform">
             <h1 class="login">Login</h1>
             <form action="login" method="POST">
@@ -32,7 +34,7 @@
                 </div>
                 <div class="input-group-senha">
                     <button type="button" id="hidepassword" class="hidepassword">
-                        <img onclick="eyeopen()" id="olhoaberto" class="olhoaberto" src="/Imgs Gerais/imgs/visible.png"
+                        <img onclick="eyeopen()" id="olhoaberto" class="olhoaberto" src="/static/imgs/visible.png"
                             alt="olho aberto">
                     </button>
                     <input required type="password" name="iptSenhaLogin" autocomplete="current-password"
@@ -43,8 +45,9 @@
             </form>
         </section>
         <p class="signup">Ainda não tem uma conta?
-            <a rel="noopener noreferrer" href="{{ url_for('cadastrar') }}" class="">Cadastre-se aqui</a>
+            <a class="s" rel="noopener noreferrer" href="{{ url_for('cadastrar') }}" class="">Cadastre-se aqui</a>
         </p>
+        </div>
     </div>
     <script src="{{ url_for('static', filename='js/script.login.js') }}"></script>
 </body>

@@ -17,30 +17,30 @@ body{
 .linha-vertical {
     position: absolute;
     transform: rotate(90deg);
-    border-left: 11px solid var(--VermelhoTerra); /* Linha vertical */
-    height: 1000px; /* Defina o tamanho da linha */
-    margin: 20px; /* Espaçamento ao redor da linha */
+    border-left: 11px solid var(--VermelhoTerra);
+    height: 1000px;
+    margin: 20px; 
     top: 0%;
     left: 60%;
     z-index: 99;
 }
 .losangulo{
-    width: 150px; /* Largura do losango */
-    height: 150px; /* Altura do losango */
-    background-color: var(--VermelhoTerra); /* Cor do losango */
-    transform: rotate(45deg); /* Rotação para formar o losango */
-    margin: 50px; /* Espaçamento opcional */
+    width: 150px; 
+    height: 150px; 
+    background-color: var(--VermelhoTerra);
+    transform: rotate(45deg); 
+    margin: 50px; 
     position: absolute;
     top: 42%;
     left: 84.5%;
     z-index: 99;
 }
 .losangulo2{
-    width: 150px; /* Largura do losango */
-    height: 150px; /* Altura do losango */
-    background-color: var(--VermelhoTerra); /* Cor do losango */
-    transform: rotate(45deg); /* Rotação para formar o losango */
-    margin: 50px; /* Espaçamento opcional */
+    width: 150px; 
+    height: 150px; 
+    background-color: var(--VermelhoTerra);
+    transform: rotate(45deg); 
+    margin: 50px; 
     position: absolute;
     top: 1.2%;
     left: 58.9%;
@@ -54,9 +54,9 @@ body{
     transform: rotate(90deg);
     width: 0px;
     height: 0px;
-    border-left: 20px solid transparent;  /* Bordas laterais transparentes */
-    border-right: 20px solid transparent; /* Bordas laterais transparentes */
-    border-bottom: 60px solid var(--VermelhoTerra);     /* A borda inferior define o triângulo */
+    border-left: 20px solid transparent;  
+    border-right: 20px solid transparent; 
+    border-bottom: 60px solid var(--VermelhoTerra); 
 }
 .logo{
     width: 70px;
@@ -103,18 +103,18 @@ body{
     left: 27%;
     top:-600%;
     width: 30%;
-    background-color: rgb(17, 17, 17); /* Fundo cinza claro */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 15px; /* Espaçamento interno */
-    font-family: Arial, sans-serif; /* Fonte padrão */
-    font-size: 18px; /* Tamanho do texto */
-    color: rgb(255, 255, 255); /* Cor do texto principal */
-    display: inline-block; /* Mantém a borda ajustada ao texto */
+    background-color: rgb(17, 17, 17); 
+    border-radius: 10px; 
+    padding: 15px; 
+    font-family: Arial, sans-serif;
+    font-size: 18px; 
+    color: rgb(255, 255, 255); 
+    display: inline-block; 
     align-items: center;
 }
 .paragrafolinks span {
-    color: var(--Laranja); /* Cor diferente para a parte após o <br> */
-    font-weight: bold; /* Deixa o texto em negrito */
+    color: var(--Laranja);
+    font-weight: bold;
 }
 .links{
     position: relative;
