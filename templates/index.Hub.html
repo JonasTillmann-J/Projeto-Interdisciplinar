@@ -7,9 +7,62 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.hub.css') }}">
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <!--Logo da Empresa-->
-        <img class="logo" src="" alt="">
+    <img class="logo" src="/static/imgs/logo.png" alt="">
+    <div class="losangulo"></div>
+    <div class="losangulo2"></div>
+    <div class="linha-vertical"></div>
+    <div class="triangulo"></div>
+    <section class="centro" id="centro">
+        <div class="coluna">
+            <img class="ImagemColuna" src="/static/imgs/imagem da coluna.png" alt="">
+        </div>
+        <div class="retangulo" id="retangulo">
+            <div class="container">
+                <div class="estatico">Eu Sou A Callisto, Ajudo</div>
+                <ul class="dinamico">
+                    <li><span>Desenvolvedores</span></li>
+                    <li><span>Engenheiros</span></li>
+                    <li><span>Professores</span></li>
+                    <li><span>Enfermeiros</span></li>
+                    <li><span>Psiquiatras</span></li>
+                    <li><span>Psicólogos</span></li>
+                    <li><span>Médicos</span></li>
+                    <li><span>Advogados</span></li>
+                    <li><span>Administradores</span></li>
+                    <li><span>Contadores</span></li>
+                    <li><span>Biomédicos</span></li>
+                    <li><span>Farmacêuticos</span></li>
+                    <li><span>Arquitetos</span></li>
+                    <li><span>Jornalistas</span></li>
+                    <li><span>Pedagogos</span></li>
+                    <li><span>Assistentes Sociais</span></li>
+                    <li><span>Fisioterapeutas</span></li>
+                    <li><span>Veterinários</span></li>
+                    <li><span>Economistas</span></li>
+                    <li><span>Químicos</span></li>
+                    <li><span>Matemáticos</span></li>
+                    <li><span>Historiadores</span></li>
+                    <li><span>Sociólogos</span></li>
+                    <li><span>Geógrafos</span></li>
+                    <li><span>Publicitários</span></li>
+                    <li><span>Nutricionistas</span></li>
+                    <li><span>Biólogos</span></li>
+                    <li><span>Fonoaudiólogos</span></li>
+                    <li><span>Todos Os Alunos</span></li>
+                </ul>
+            </div>
+            <div class="links">
+                <p class="paragrafolinks">
+                         A jornada de sua história começa com <span>um único clique</span>
+                </p>
+                <a href="{{ url_for('login') }}" class="signin">Login</a>
+                <a href="{{ url_for('cadastrar') }}" class="register">Cadastro</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 
+        
         <div class="navbar">
             
             <a class="element" href="{{ url_for('sobrenos') }}">Sobre nós</a>
@@ -17,17 +70,7 @@
             <a href="{{ url_for('cadastrar') }}" class="register">Cadastrar-se</a>
         </div>
     </nav>
-        <div class="container">
-            <div class="estatico">Eu Sou A Callisto Ajudo</div>
-            <ul class="dinamico">
-                <li><span>Desenvolvedor</span></li>
-                <li><span>Engenheiro</span></li>
-                <li><span>Professor</span></li>
-                <li><span>Enfermeiro</span></li>
-                <li><span>Psiquiatra</span></li>
-                <li><span>Todos Os Alunos</span></li>
-            </ul>
-        </div>
+         -->
 
     <script src="{{ url_for('static', filename='js/script.hub.js') }}"></script>
 </body>

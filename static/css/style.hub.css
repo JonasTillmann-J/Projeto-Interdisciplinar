@@ -3,25 +3,189 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-body { 
-    display: flex;
+:root{
+    --CinzaAzulado:#7d84b9;
+    --AzulClaro:#36639c;
+    --AzulEscuro:#052a5e;
+    --PretoAzulado:#020c25;
+    --VermelhoTerra:#651f17;
+    --Laranja:#f06929;
+}
+body{
+    background-color: var(--AzulEscuro);
+}
+.linha-vertical {
+    position: absolute;
+    transform: rotate(90deg);
+    border-left: 11px solid var(--VermelhoTerra); /* Linha vertical */
+    height: 1000px; /* Defina o tamanho da linha */
+    margin: 20px; /* Espaçamento ao redor da linha */
+    top: 0%;
+    left: 60%;
+    z-index: 99;
+}
+.losangulo{
+    width: 150px; /* Largura do losango */
+    height: 150px; /* Altura do losango */
+    background-color: var(--VermelhoTerra); /* Cor do losango */
+    transform: rotate(45deg); /* Rotação para formar o losango */
+    margin: 50px; /* Espaçamento opcional */
+    position: absolute;
+    top: 42%;
+    left: 84.5%;
+    z-index: 99;
+}
+.losangulo2{
+    width: 150px; /* Largura do losango */
+    height: 150px; /* Altura do losango */
+    background-color: var(--VermelhoTerra); /* Cor do losango */
+    transform: rotate(45deg); /* Rotação para formar o losango */
+    margin: 50px; /* Espaçamento opcional */
+    position: absolute;
+    top: 1.2%;
+    left: 58.9%;
+    z-index: 99;
+}
+.triangulo {
+    position: absolute;
+    top: 52.3%;
+    left: 34%;
+    z-index: 99;
+    transform: rotate(90deg);
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;  /* Bordas laterais transparentes */
+    border-right: 20px solid transparent; /* Bordas laterais transparentes */
+    border-bottom: 60px solid var(--VermelhoTerra);     /* A borda inferior define o triângulo */
+}
+.logo{
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    margin: 10px;
+}
+.centro{
+    background-color: transparent;
+    height:450px;
+    width:95%;
+    position: relative;
+    top:-30%;
+    left:49.25%;
+    transform: translate(-50% , 30%);
+} 
+.coluna{
+    width: 27%;
+    height: 208%;
+    top: -30%;
+    left: 67%;
+    position: absolute;
+    z-index: 99;
+    background-color:var(--PretoAzulado);
+}
+.ImagemColuna{
+    position: absolute;
+    top: -10%;
+    left: 25%;
+    width: 50%;
+    height: 110%;
+}
+.retangulo{
+    background-color: var(--AzulClaro);
+    height: 100%;
+    width: 90%;
+    left: 8%;
+    position: relative;
+    border: solid 2px var(--Laranja);
+    border-radius:15px;
+}
+.paragrafolinks {
+    position: absolute;
+    left: 27%;
+    top:-600%;
+    width: 30%;
+    background-color: rgb(17, 17, 17); /* Fundo cinza claro */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    font-size: 18px; /* Tamanho do texto */
+    color: rgb(255, 255, 255); /* Cor do texto principal */
+    display: inline-block; /* Mantém a borda ajustada ao texto */
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: rgb(108, 173, 230);  
 }
-
+.paragrafolinks span {
+    color: var(--Laranja); /* Cor diferente para a parte após o <br> */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+.links{
+    position: relative;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50% , 50%);
+}
+.signin{
+    text-decoration: none;
+    position: relative;
+    top: 130%;
+    left: 25%;
+    transform: translate(-50% , -35%);
+    padding: 1.3em 3em;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000000;
+    background-color: var(--CinzaAzulado);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.8s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.signin:hover {
+    background-color: #1fa36e;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: rgb(255, 255, 255);
+}
+.register {
+    text-decoration: none;
+    position: relative;
+    top: 130%;
+    left: 32%;
+    transform: translate(-50% , -35%);
+    padding: 1.3em 3em;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: var(--CinzaAzulado);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.8s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+.register:hover {
+    background-color: #1fa36e;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: rgb(255, 255, 255);
+}
 .container {
-    display: inline-flex;   
+    display: inline-flex;
+    position: relative;
+    margin-top:100px;
+    margin-left: 50px;
 }
-
+.estatico{
+    margin-top:12px;
+}
 .container .estatico {
     color: black;
     font-size: 60px;
     font-weight: 400;
 }
-
 .container .dinamico {
     margin-left: 15px;
     line-height: 90px;
@@ -29,24 +193,22 @@ body {
     color: red;
     overflow: hidden;
 }
-
 .dinamico li {
-    color: black;
+    color: var(--Laranja);
     list-style: none;
     font-size: 60px;
     font-weight: 300;
     left: 0;
     position: relative;
     top: 0;
-    animation: slide 15s steps(6) infinite;
+    animation: slide 66s steps(33) infinite; /* 33 itens * 1.5s por item */
 }
 
 @keyframes slide {
     100% {
-        top: -540px; /* 6 items * 90px */
+        top: -2970px; /* 33 itens * 90px */
     }
 }
-
 .dinamico li span::after {
     content: "";
     position: absolute;
@@ -55,30 +217,23 @@ body {
     left: 0;
     border-left: 2px solid black;
     animation: typing 1.5s steps(15) 1 forwards, infinite 1.5s;
-    background: rgb(108, 173, 230);
+    background: var(--AzulClaro);
 }
-
 .dinamico li span {
     position: relative;
 }
-
 @keyframes typing {
     100% {
         left: 100%;
         margin: 0 -35px 0 35px;
     }
 }
-
 @keyframes blink {
     50% {
         border-color: transparent;
     }
 }
-
-
-
-/* ----------------------------------------------------------------------------- Navegação -----------------------------------------------------------------------------------------------*/
-
+/*
 .navbar {
     position: relative;
     display: flex;
@@ -154,4 +309,4 @@ body {
     transition: all 0.9s ease-in-out;
     border: 1px solid rgb(0, 0, 0);
     background: transparent;
-}
+} */
