@@ -23,7 +23,6 @@ def cadastrar():
                 password='12568709Fa!',
                 database='Callista'
             )
-
             if connection.is_connected():
                 cursor = connection.cursor()
                 email_cadastro = request.form['iptEmailTcad']

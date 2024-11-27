@@ -3,89 +3,39 @@
     --distanciacantotela: 38.5%;
     --calitop: 17.3%;
     --calileft: 75%;
+    --posicaoinput: 28%;
+    --marginnav: 110px;
+    --CinzaAzulado:#3a3f61;
+    --AzulClaro:#36639c;
+    --AzulEscuro:#052a5e;
+    --PretoAzulado:#020c25;
+    --VermelhoTerra:#651f17;
+    --Laranja:#f06929;
+    --color-gpt-green: #10A37F;
+    --color-light-green: #DFF4F0;
+    --color-dark-gray: #343541;
+    --color-medium-gray: #40414F;
+    --color-light-gray: #202123;
+    --color-white: #FFFFFF;
+    --color-light-blue: #19C9E1;
+    --color-soft-purple: #8C8D9F;
+    --color-black: #000000;
+    --color-neutral-beige: #F7F7F8;
 }
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #BFBE9C;
+    background-color: var(--PretoAzulado);
 }
 /*/------------------------------Gerais----------------------------------------*/
-/*----------------------------Navegação---------------------------------------*/
 
-.navbar {
-    position: relative;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-    padding: 10px 10px;
-    background: transparent;
-    left: 0%;
-    gap: 10px;
+.logo{
+    width: 60px;
+    border-radius: 20px;
+    padding: 15px;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: black;
-    font-size: 13px;
-}
-.navbar .element{
-    position: relative;
-    border: 1px solid transparent;
-    border-radius: 5px;
-}
-.navbar .element::before {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    border: 1px solid #5918db;
-    border-radius: 5px;
-    background-color: #5918db;
-    transition: width 0.5s ease-in-out;
-}
-.navbar .element:hover::before {
-    width: 100%;
-}
-.navbar .signin {
-    padding: 5px 10px;
-    background: white;
-    border: 1px solid rgb(53, 53, 53);
-    border-radius: 5px;
-    color: #000;
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-.navbar .signin:hover {
-    background: rgb(0, 0, 0);
-    color: #fff;
-}
-.navbar .signin:not(:hover) {
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-    background: white;
-    border: 1px solid rgb(53, 53, 53);
-    color: #000;
-}
-.navbar .register {
-    padding: 5px 10px;
-    background: white;
-    border: 1px solid rgb(53, 53, 53);
-    border-radius: 5px;
-    color: #000;
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-}
-.navbar .register:hover {
-    background: rgb(0, 0, 0);
-    color: #fff;
-}
-.navbar .register:not(:hover) {
-    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
-    background: white;
-    border: 1px solid rgb(53, 53, 53);
-    color: #000;
-}
-/*/----------------------------Navegação---------------------------------------*/
 /*--------------------------------Chat-----------------------------------------*/
 .chat {
     position: absolute;
@@ -94,8 +44,8 @@ body {
     transform: translate(-50%, -0%);
     width: 50%;
     height: 800px;
-    background-color: #004040;
-    border: 3px solid #004040;
+    background-color: var(--color-medium-gray);
+    border: 3px solid var(--color-medium-gray);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -106,8 +56,8 @@ body {
     transform: translate(-50%, -0%);
     width: 50%;
     height: 100px;
-    background-color: #5D5B6D;
-    border: 3px solid #5D5B6D;
+    background-color: var(--color-medium-gray);
+    border: 3px solid var(--color-medium-gray);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -119,7 +69,7 @@ body {
     height: 85%;
     overflow-y: auto; /* Permite rolagem vertical */
     padding: 10px;
-    background-color: #4A4633; /* Cor de fundo para as mensagens */
+    background-color: var(--color-white); /* Cor de fundo para as mensagens */
     border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior */
 }
 /* Estilo geral para todas as mensagens */
@@ -133,8 +83,8 @@ body {
   
   /* Estilo para a mensagem do usuário (alinhada à direita) */
   .user-message {
-    background-color: #d1e7dd;
-    color: #0f5132;
+    background-color: var(--PretoAzulado);
+    color: whitesmoke;
     align-self: flex-end;  /* Alinha a mensagem à direita */
     text-align: right;
   }
@@ -142,7 +92,7 @@ body {
   /* Estilo para a resposta da IA (alinhada à esquerda) */
   .ia-message {
     background-color: #f8d7da;
-    color: #842029;
+    color: black;
     align-self: flex-start;  /* Alinha a mensagem à esquerda */
     text-align: left;
   }
@@ -159,7 +109,7 @@ body {
     left: 0;
     width: 100%;
     height: 70px; /* Mantido */
-    background-color:#004040;
+    background-color:var(--color-medium-gray);
     display: flex;
     align-items: center; /* Alinha os itens verticalmente ao centro */
     border-radius: 10px; /* Mantido */
@@ -167,12 +117,12 @@ body {
 .inputtxt {
     position: relative;
     left: -8%;
-    background-color: #00000096;
+    background-color: white;
     border-radius: 20px;
     width: calc(98% - 91px); /* Ajusta a largura para levar em conta o botão */
     height: 90%; /* Mantido */
     outline: none;
-    color: #e2e1e4;
+    color: black;
     font-size: 1.5vh;
     padding: 0 10px; /* Adiciona espaçamento interno */
     overflow-wrap: break-word; /* Quebra a linha quando chega à borda */
@@ -181,7 +131,7 @@ body {
     white-space: pre-wrap; /* Faz com que quebre linhas corretamente e respeite espaços */
 }
 .inputtxt::placeholder {
-    color: #a6a0a0;
+    color: var(--PretoAzulado);
     font-size: 1.5vh;
 }
 /*------------------------------Input < Btnenviar-----------------------------------------*/
