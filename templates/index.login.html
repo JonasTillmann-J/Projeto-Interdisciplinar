@@ -7,24 +7,13 @@
     <title>Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.login.css') }}">
 </head>
-<!--
-    input senha == iptSenhaLogin
-    input email == iptEmailLogin
--->
 <body>
     <section class="left-panel">
-        <nav class="nav">
-            <a href="{{ url_for('sobrenos') }}">Sobre nós</a>
-            <a href="{{ url_for('cadastrar') }}">Cadastrar-se</a>
-            <a class="element" href="{{ url_for('hub') }}">Hub</a>
-        </nav>
-        <div class="img">
-            <img class="geniodadiv" src="/static/imgs/iamgem.login.png" alt="">
-        </div>
+        <img class="geniodadiv" src="/static/imgs/iamgem.login.png" alt="">
     </section>
     <div class="right-panel">
         <div class="geniodadiv2" >
-        <img class="logo" src="/static/imgs/logo.png" alt="">
+            <a href="{{ url_for('hub') }}"><img class="logo" src="/static/imgs/logo.png" alt=""></a>
         <section class="loginform" id="loginform">
             <h1 class="login">Login</h1>
             <form action="login" method="POST">
@@ -51,5 +40,4 @@
     </div>
     <script src="{{ url_for('static', filename='js/script.login.js') }}"></script>
 </body>
-
 </html>

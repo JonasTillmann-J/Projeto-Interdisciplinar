@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.chat.css') }}">
 </head>
 <body>
-    <img class="logo" src="/static/imgs/logo.png" alt="">
+    <a href="{{ url_for('hub') }}"> <img class="logo" src="/static/imgs/logo.png" alt=""></a>
     <nav class="navbar" id="navbar">
             <a class="element" href="{{ url_for('sobrenos') }}">Sobre nós</a>
             <a class="element" href="{{ url_for('hub') }}">HUB</a>   
@@ -19,7 +19,7 @@
                 <!-- As mensagens do chat vão aqui -->
             </div>
             <section class="input" id="input">
-                <button class="enviar"  onclick="sendMessage()">></button>
+                <button class="enviar"  onclick="sendMessage()">Enviar</button>
                 <textarea class="inputtxt" id="inputtxt" placeholder="Fale mais sobre seu projeto:" rows="1"></textarea>
             </section>
         </div>
