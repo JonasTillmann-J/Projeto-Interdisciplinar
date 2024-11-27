@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
   --posicaoinput: 28%;
   --marginnav: 110px;
@@ -7,6 +8,17 @@
   --PretoAzulado:#020c25;
   --VermelhoTerra:#651f17;
   --Laranja:#f06929;
+=======
+:root {
+  --posicaoinput: 28%;
+  --marginnav: 110px;
+  --CinzaAzulado: #3a3f61;
+  --AzulClaro: #36639c;
+  --AzulEscuro: #052a5e;
+  --PretoAzulado: #020c25;
+  --VermelhoTerra: #651f17;
+  --Laranja: #f06929;
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
   --color-gpt-green: #10A37F;
   --color-light-green: #DFF4F0;
   --color-dark-gray: #343541;
@@ -18,11 +30,17 @@
   --color-black: #000000;
   --color-neutral-beige: #F7F7F8;
 }
+<<<<<<< HEAD
 *{
+=======
+
+* {
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
+<<<<<<< HEAD
 html{
   width: 100%;
   height: 100%;
@@ -259,24 +277,100 @@ input:valid~label {
   padding: 0 .2em;
   color: var(--AzulEscuro);
   font-size: 2.1em;
+=======
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: transparent;
 }
+
+.forn{
+  background-color: var(--PretoAzulado);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-cad {
+  background-color: var(--color-neutral-beige);
+  margin: 5%;
+  padding: 2rem;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  width: 80%;
+}
+
+.center {
+  text-align: center;
+}
+
+.Cadastrese {
+  font-size: 3em;
+  color: var(--PretoAzulado);
+  margin-bottom: 10px;
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
+}
+
+.text {
+  font-size: 1.2em;
+  color: var(--AzulClaro);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  width: calc(100% - 50px);
+  border: solid 3px var(--AzulEscuro);
+  border-radius: 1rem;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--AzulEscuro);
+  transition: border 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.user-label {
+  position: absolute;
+  left: 15px;
+  top: -1%;
+  color: var(--AzulEscuro);
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus,
+input:valid {
+  outline: none;
+  border: 1.5px solid var(--AzulEscuro);
+}
+
+.input:focus~.user-label,
+input:valid~.user-label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: white;
+  padding: 0 .2em;
+  color: var(--AzulEscuro);
+  font-size: 0.8em;
+}
+
 .hidepassword {
   background: transparent;
   border: 0px;
   position: absolute;
-  top: 9px;
-  left: 94%;
-  width: 35px;
-  height: 35px;
-}
-.olhoaberto {
-  position: absolute;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  right: 10px;
+  transform: translateY(-50%);
   width: 35px;
   height: 35px;
 }
+<<<<<<< HEAD
 .btn-submit {
   position: absolute;
   top: 80%;
@@ -284,23 +378,59 @@ input:valid~label {
   transform: translate(-50%, -80%);
   padding: 1.3em 3em;
   font-size: 18px;
+=======
+
+.olhoaberto {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2em;
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
-  color: #000;
-  background-color: #fff;
+  color: var(--color-light-gray);
+  background-color: var(--color-gpt-green);
   border: none;
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(21, 255, 0, 0.5); /* Sombra verde */
   transition: all 0.8s ease 0s;
   cursor: pointer;
   outline: none;
 }
+
 .btn-submit:hover {
   background-color: #1fa36e;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-  color: rgb(255, 255, 255);
+  color: #ffffff;
+  transform: translateY(-7px);
 }
+
+.btn-submit:active {
+  transform: translateY(-1px);
+}
+
+a {
+  color: var(--AzulEscuro);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--color-gpt-green);
+}
+
+#mensagem {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--VermelhoTerra);
+}
+<<<<<<< HEAD
 .Cadastrese {
   position: absolute;
   top: 4%;
@@ -324,3 +454,5 @@ input:valid~label {
   color: rgba(156, 163, 175, 1);
   z-index: 99;
 }
+=======
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca

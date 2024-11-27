@@ -1,13 +1,13 @@
-from flask import Flask, request, jsonify, render_template, redirect, url_for, jsonify
+from flask import Flask, request, jsonify, render_template, redirect, url_for
 import mysql.connector
-import time
+import bcrypt
 from mysql.connector import Error
 import google.generativeai as genai
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
-def hub():
+def index():
     return render_template('index.Hub.html')
 
 # Rota para a página inicial/cadastro
@@ -20,7 +20,7 @@ def cadastrar():
             connection = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='Root12345@',
+                password='12568709Fa!',
                 database='Callista'
             )
             if connection.is_connected():
@@ -29,16 +29,19 @@ def cadastrar():
                 primeiro_nome = request.form['iptPnomeTcad']
                 segundo_nome = request.form['iptSnomeTcad']
                 primeira_senha = request.form['iptsenha1Tcad']
-                segunda_senha = request.form['iptsenha2Tcad'] 
-               
+                segunda_senha = request.form['iptsenha2Tcad']
+
+
+                # Criptografar a senha
+                senha_hash = bcrypt.hashpw(primeira_senha.encode('utf-8'), bcrypt.gensalt())
+
                 cursor.execute("SELECT Email FROM Cadastro WHERE Email=%s", (email_cadastro,))
-    
                 if cursor.fetchone():
                     return "Conta já existente com esse email."
                 else:
                     cursor.execute(
-                        "INSERT INTO Cadastro (PNomeCadastro, SNomeCadastro, PSenhaCadastro, SSenhaCadastro, Email) VALUES (%s, %s, %s, %s, %s)",
-                        (primeiro_nome, segundo_nome, primeira_senha, segunda_senha, email_cadastro)
+                        "INSERT INTO Cadastro (PNomeCadastro, SNomeCadastro, PSenhaCadastro, Email) VALUES (%s, %s, %s, %s)",
+                        (primeiro_nome, segundo_nome, senha_hash, email_cadastro)
                     )
                     connection.commit()
                     return render_template('index.chat.html')
@@ -64,7 +67,7 @@ def login():
             connection = mysql.connector.connect(
                 host='localhost',
                 user='root',
-                password='Root12345@',
+                password='12568709Fa!',
                 database='Callista'
             )
 
@@ -76,12 +79,13 @@ def login():
                 senha_login = request.form.get('iptSenhaLogin')
 
                 # Consulta ao banco de dados
-                query = "SELECT Email, Senha FROM Login WHERE Email = %s AND Senha = %s"
-                cursor.execute(query, (email_login, senha_login))
+                query = "SELECT Email, PSenhaCadastro FROM Cadastro WHERE Email = %s"
+                cursor.execute(query, (email_login,))
+                result = cursor.fetchone()
 
-                if cursor.fetchone():  # Credenciais válidas
+                if result and bcrypt.checkpw(senha_login.encode('utf-8'), result[1].encode('utf-8')):
                     return redirect(url_for('chat'))
-                else:  # Credenciais inválidas
+                else:
                     return render_template('index.login.html', error="Credenciais inválidas. Tente novamente.")
 
             else:
@@ -139,3 +143,29 @@ def IAgenerativa():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    #Criptografar senha
+
+   
+
+# Criptografando a senha
+def criptografar_senha(senha):
+    salt = bcrypt.gensalt()
+    senha_hash = bcrypt.hashpw(senha.encode('utf-8'), salt)
+    return senha_hash
+
+# Verificando a senha
+def verificar_senha(senha, senha_hash):
+    return bcrypt.checkpw(senha.encode('utf-8'), senha_hash)
+
+# Exemplo de uso
+senha = "minhaSenhaSegura123!"
+senha_hash = criptografar_senha(senha)
+print(f"Senha criptografada: {senha_hash}")
+
+# Verificação
+senha_correta = verificar_senha("minhaSenhaSegura123!", senha_hash)
+senha_errada = verificar_senha("senhaIncorreta", senha_hash)
+print(f"Senha correta: {senha_correta}")
+print(f"Senha errada: {senha_errada}")
+

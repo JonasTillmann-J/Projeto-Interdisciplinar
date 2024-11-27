@@ -17,7 +17,7 @@ function eyeopen(inputNumber) {
 
 
 
-function VerificaSenha(){
+function VerificaSenha() {
     let Senha1 = document.getElementById('olhoabertocad1').value;
     let Senha2 = document.getElementById('olhoabertocad2').value;
     let Mensagem = document.getElementById('mensagem');
@@ -25,27 +25,32 @@ function VerificaSenha(){
     const hasUppercase = /[A-Z]/.test(Senha1);
     const hasSpecialChar = /[!@#$%^&*(),.?":{}|<>]/.test(Senha1);
 
-    if (Senha1.length != 8) {
-     Mensagem.textContent = "As senhas devem conter no minimo 8 caracteres.";
-     Mensagem.style.backgroundColor = "#ff4d4d";
-     return false;
+    // Verificar se a senha tem pelo menos 8 caracteres
+    if (Senha1.length < 8) {
+        Mensagem.textContent = "A senha deve conter no mínimo 8 caracteres.";
+        Mensagem.style.backgroundColor = "#ff4d4d";  // Mensagem de erro
+        return false;  // Impede o envio do formulário
     }
+
+    // Verificar se a senha contém pelo menos uma letra maiúscula ou um caractere especial
     if (!hasUppercase && !hasSpecialChar) {
-         Mensagem.textContent = "A senha deve conter pelo menos uma letra maiúscula ou um caractere especial";
-         Mensagem.style.backgroundColor = "#ff4d4d"; // Mensagem de erro return false; // Impede o envio do formulário }
-         return false;
+        Mensagem.textContent = "A senha deve conter pelo menos uma letra maiúscula ou um caractere especial.";
+        Mensagem.style.backgroundColor = "#ff4d4d";  // Mensagem de erro
+        return false;  // Impede o envio do formulário
     }
-        if (Senha1 === Senha2) {
-            Mensagem.textContent = "Senhas Iguais";
-            Mensagem.style.backgroundColor = "#4CAF50";  // Mensagem de sucesso
-            window.location.href = "/chat";  // Redireciona para a página de chat
-            return true;
-        } else {
-            Mensagem.textContent = "Senhas Não Conferem";
-            Mensagem.style.backgroundColor = "#ff4d4d";  // Mensagem de erro
-        }
-    return false;  // Impede o envio do formulário para permitir a verificação de senha
+
+    // Verificar se as senhas coincidem
+    if (Senha1 === Senha2) {
+        Mensagem.textContent = "Senhas Iguais";
+        Mensagem.style.backgroundColor = "#4CAF50";  // Mensagem de sucesso
+        return true;  // Permite o envio do formulário
+    } else {
+        Mensagem.textContent = "Senhas Não Conferem";
+        Mensagem.style.backgroundColor = "#ff4d4d";  // Mensagem de erro
+        return false;  // Impede o envio do formulário
+    }
 }
+
 
 
 

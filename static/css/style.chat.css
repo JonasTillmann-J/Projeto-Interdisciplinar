@@ -25,6 +25,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+<<<<<<< HEAD
 }
 body{
     background-color:var(--PretoAzulado);
@@ -106,14 +107,49 @@ body{
     height: 70px;
     position: absolute;
     margin: 10px;
+=======
+    background-color: var(--PretoAzulado);
+}
+/*/------------------------------Gerais----------------------------------------*/
+
+.logo{
+    width: 60px;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+/*--------------------------------Chat-----------------------------------------*/
+.chat {
+    position: absolute;
+    left: 50%;
+    top: 14.58%;
+    transform: translate(-50%, -0%);
+    width: 50%;
+    height: 800px;
+    background-color: var(--color-medium-gray);
+    border: 3px solid var(--color-medium-gray);
+    border-radius: 20px;
+    overflow: hidden;
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
 }
 .chat{
     position: absolute;
+<<<<<<< HEAD
     left: 26%;
     top: 5%;
     width: 980px;
     height: 890px;
     background-color: transparent;
+=======
+    left: 50%;
+    top: 14.58%;
+    transform: translate(-50%, -0%);
+    width: 50%;
+    height: 100px;
+    background-color: var(--color-medium-gray);
+    border: 3px solid var(--color-medium-gray);
+    border-radius: 20px;
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
     overflow: hidden;
 }
 .telachat {
@@ -122,6 +158,7 @@ body{
 }
 .messages {
     height: 85%;
+<<<<<<< HEAD
     overflow-y: auto; 
     padding: 30px;
 }
@@ -143,6 +180,35 @@ body{
     margin: 5px;
     color: #ffffff;
     align-self: flex-start;  
+=======
+    overflow-y: auto; /* Permite rolagem vertical */
+    padding: 10px;
+    background-color: var(--color-white); /* Cor de fundo para as mensagens */
+    border-radius: 20px 20px 0 0; /* Bordas arredondadas na parte superior */
+}
+/* Estilo geral para todas as mensagens */
+.message {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 60%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para a mensagem do usuário (alinhada à direita) */
+  .user-message {
+    background-color: var(--PretoAzulado);
+    color: whitesmoke;
+    align-self: flex-end;  /* Alinha a mensagem à direita */
+    text-align: right;
+  }
+  
+  /* Estilo para a resposta da IA (alinhada à esquerda) */
+  .ia-message {
+    background-color: #f8d7da;
+    color: black;
+    align-self: flex-start;  /* Alinha a mensagem à esquerda */
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
     text-align: left;
 }
 #messages {
@@ -154,20 +220,30 @@ body{
     bottom: 0; 
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     height: 70px; 
     background-color:var(--PretoAzulado);
+=======
+    height: 70px; /* Mantido */
+    background-color:var(--color-medium-gray);
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
     display: flex;
     align-items: center; 
 }
 .inputtxt {
     position: relative;
+<<<<<<< HEAD
     left: -7.5%;
     background-color: var(--CinzaAzulado);
+=======
+    left: -8%;
+    background-color: white;
+>>>>>>> d51ffb1ccdf5270926ab0aafe34855659724b3ca
     border-radius: 20px;
     width: calc(98% - 91px); 
     height: 60%; 
     outline: none;
-    color: #e2e1e4;
+    color: black;
     font-size: 1.5vh;
     padding: 15px 13px 0px 13px; 
     overflow-wrap: break-word;
@@ -176,7 +252,7 @@ body{
     white-space: pre-wrap;
 }
 .inputtxt::placeholder {
-    color: #a6a0a0;
+    color: var(--PretoAzulado);
     font-size: 1.5vh;
 }
 .enviar {
